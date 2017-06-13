@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="plug/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/fall.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript">
+    /*内联样式 控制屏幕缩放*/
+    !function(){var a="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",b=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(b),b.styleSheet)b.styleSheet.disabled||(b.styleSheet.cssText=a);else try{b.innerHTML=a}catch(c){b.innerText=a}}();!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+"px",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name="viewport"]'),h=e.querySelector('meta[name="flexible"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){ var l=g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else if(h){var m=h.getAttribute("content");if(m){var n=m.match(/initial\-dpr=([\d\.]+)/),o=m.match(/maximum\-dpr=([\d\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}if(!i&&!j){var p=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),q=a.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute("data-dpr",i),!g)if(g=e.createElement("meta"),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+j+", maximum-scale="+j+", minimum-scale="+j+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var r=e.createElement("div");r.appendChild(g),e.write(r.innerHTML)}a.addEventListener("resize",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),"complete"===e.readyState?e.body.style.fontSize=12*i+"px":e.addEventListener("DOMContentLoaded",function(){e.body.style.fontSize=12*i+"px"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return"string"==typeof a&&a.match(/rem$/)&&(b+="px"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;return"string"==typeof a&&a.match(/px$/)&&(b+="rem"),b}}(window,window.lib||(window.lib={}));
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="plug/waterfall/waterfall.min.js"></script>
+<script type="text/javascript" src="plug/waterfall/handlebars.js"></script>
+<title>映拍</title>
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <ul>
+            <li class="top-addr">
+                <span class="glyphicon glyphicon-map-marker"></span>
+                <span>长沙</span>
+            </li>
+            <li class="top-order">
+                <span>时间排序</span>
+                <span class="glyphicon glyphicon-menu-down"></span>
+            </li>
+            <li class="top-search">
+                <input type="text" name="search">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </li>
+        </ul>
+    </div>
+    <div class="fix-cover">
+        <div>
+            <ul class="fix-order">
+                <li>
+                    <img src="image/order_time.png" alt="点赞" height="60%">
+                    <span>时间排序</span>
+                </li>
+                <li>
+                    <img src="image/good_w.png" alt="点赞" height="60%">
+                    <span>点赞排序</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-pic"><img src="image/i1.jpg" width="100%" height="100%"></div>
+    
+    <div class="fall-wapper" id="fall-content"></div>  
+</div>
+
+<script type="text/x-handlebars-template" id="waterfall-tpl">
+{{#result}}
+    <div class="item">
+        <a href="javascript:void(0)">
+            <div class="img-area">
+                <img src="{{image}}" width="100%" height="100%">
+                <img src="image/raw_1495769537.png" alt="person" class="img-person">
+            </div>
+        </a>
+        <ul>
+            <li class="item-name">
+                <span>展望水库</span>
+                <span>2017-06-05</span>
+            </li>
+            <li class="item-addr">
+                <span class="glyphicon glyphicon-map-marker"></span>
+                <span>湖南省长沙市王城区</span>
+            </li>
+            <li class="item-icons">
+                <span class="tag">标签</span>
+                <span class="fall-good">
+                    <i></i>180
+                </span>
+                <span class="fall-follow">
+                    <i></i>90
+                </span>
+            </li>
+        </ul>
+    </div>
+{{/result}}
+</script>
+<script type="text/javascript">
+    var $bodyWidth = document.body.clientWidth;
+    $('#fall-content').waterfall({
+        itemCls: 'item', 
+        fitWidth: true, 
+        minCol: 2,
+        colWidth: ($bodyWidth - 30) / 2,
+        gutterWidth: 10,
+        gutterHeight: 10,
+        align: 'left',
+        path: function(page) {
+            return 'data/data.json?page=' + page;
+        },
+        callbacks: {
+            renderData: function (data, dataType) {
+                console.log(data);
+                console.log(dataType)
+                var tpl,
+                    template;
+                if ( dataType === 'json' ||  dataType === 'jsonp'  ) { // json或jsonp格式
+                    tpl = $('#waterfall-tpl').html();
+                    template = Handlebars.compile(tpl);
+
+                    return template(data);
+                } else { // html格式
+                    return data;
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

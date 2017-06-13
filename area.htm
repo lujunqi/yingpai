@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="plug/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/area.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js?xx"></script>
+<script type="text/javascript" src="plug/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="area.js?xx"></script>
+<title>地域选择</title>
+</head>
+<body>
+<div class="content tab">
+  <nav class="navbar  navbar-inverse navbar-inp navbar-fixed-top ">
+    <div class="back"> <span class="glyphicon glyphicon-chevron-left"></span> </div>
+    地域选择
+    <div class="geo "> 确定 </div>
+  </nav>
+  <div style="height:50px;"></div>
+  <ul id="myTab" class="nav nav-tabs">
+    <li class="active"  ><a href="#home" data-toggle="tab"> 国内</a></li>
+    <li  ><a href="#ios" data-toggle="tab">海外</a></li>
+  </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="home">
+      <div class="input-group col-md-3" style="margin-top:10px;positon:relative">
+        <input type="text" class="form-control"  style="height:35px; line-height:35px;" placeholder="请输入字段名" / >
+        <span class="input-group-btn">
+        <button class="btn btn-default glyphicon glyphicon-search" style="height:35px; top:0px;">查找</button>
+        </span> </div>
+      
+      <!--字母 -->
+      <div class="initials">
+        <ul>
+          <li> <span class="glyphicon glyphicon-star-empty"></span> </li>
+        </ul>
+      </div>
+      <div class="sort_letter" ></div>
+      
+      <div id="cur_city">
+        <div class="sort_letter" id="cur">当前城市</div>
+        <div class="sort_list">
+          <button class="btn btn-default" style="margin:1rem;">长沙</button>
+        </div>
+      </div>
+      <div id="hot_city">
+        <div class="sort_letter" id="hot">热门城市</div>
+        <div class="sort_list">
+          <a class="btn btn-default" style="margin:2px;">长沙</a>
+          <a class="btn btn-default" style="margin:2px;">长沙</a>
+          <a class="btn btn-default" style="margin:2px;">长沙</a>
+          <a class="btn btn-default" style="margin:2px;">长沙</a>
+          <a class="btn btn-default" style="margin:2px;">长沙</a>
+          <a class="btn btn-default" style="margin:2px;">长沙</a>
+          <a class="btn btn-default" style="margin:2px;">长沙</a>
+          <a class="btn btn-default" style="margin:2px;">长沙</a>
+          
+          
+        </div>
+      </div>
+      
+      <div class="sort_letter" id="A">A</div>
+      <!-- 子选项 -->
+      <div class="sort_list">
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+      </div>
+      <div class="sort_letter" id="B">B</div>
+      <!-- 子选项 -->
+      <div class="sort_list">
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+      </div>
+      <div class="sort_letter" id="C">C</div>
+      <!-- 子选项 -->
+      <div class="sort_list">
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+      </div>
+      <div style=" clear:both;"> </div>
+    </div>
+    <div class="tab-pane fade  " id="ios">
+      <div class="input-group col-md-3" style="margin-top:10px;positon:relative">
+        <input type="text" class="form-control"  style="height:35px; line-height:35px;" placeholder="请输入字段名" / >
+        <span class="input-group-btn">
+        <button class="btn btn-default glyphicon glyphicon-search" style="height:35px; top:0px;">查找</button>
+        </span> </div>
+      
+      
+      
+      <div id="cur_city">
+        <div class="sort_letter" id="cur">当前城市</div>
+        <div class="sort_list">
+          <button class="btn btn-default" style="margin:1rem;">长沙</button>
+        </div>
+      </div>
+      
+      
+      <div class="sort_letter" id="A">A</div>
+      <!-- 子选项 -->
+      <div class="sort_list">
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+      </div>
+      <div class="sort_letter" id="B">B</div>
+      <!-- 子选项 -->
+      <div class="sort_list">
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+      </div>
+      <div class="sort_letter" id="C">C</div>
+      <!-- 子选项 -->
+      <div class="sort_list">
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+        <li >李四</li>
+      </div>
+      <div style=" clear:both;"> </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
